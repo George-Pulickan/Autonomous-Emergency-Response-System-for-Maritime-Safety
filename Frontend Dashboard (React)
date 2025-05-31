@@ -1,0 +1,39 @@
+import React, { useEffect, useState } from 'react';
+import './App.css';
+
+function App() {
+  const [logs, setLogs] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/logs', {
+      headers: { Authorization: 'Bearer secret123' }
+    })
+      .then(res => res.json())
+      .then(data => setLogs(data));
+  }, []);
+
+  return (
+    <div className="App">
+      <h1>Maritime Distress Logs</h1>
+      <table>
+        <thead>
+          <tr><th>Timestamp</th><th>Lat</th><th>Long</th><th>Water</th><th>Temp</th><th>Pressure</th></tr>
+        </thead>
+        <tbody>
+          {logs.map((log, i) => (
+            <tr key={i}>
+              <td>{log.timestamp}</td>
+              <td>{log.lat}</td>
+              <td>{log.long}</td>
+              <td>{log.water_level}</td>
+              <td>{log.temperature}</td>
+              <td>{log.pressure}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default App;
