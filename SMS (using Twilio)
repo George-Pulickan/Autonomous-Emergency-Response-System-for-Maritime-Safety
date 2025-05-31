@@ -1,0 +1,11 @@
+from twilio.rest import Client
+
+def send_sms_alert(message):
+    client = Client("TWILIO_SID", "TWILIO_AUTH")
+    client.messages.create(
+        body=message,
+        from_="+1234567890",
+        to="+0987654321"
+    )
+
+# send_sms_alert("EMERGENCY: High water detected!")
