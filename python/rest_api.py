@@ -1,7 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify
 import sqlite3
 
 app = Flask(__name__)
+API_TOKEN = "secret123"  # replace with a secure token in production
+
+@app.before_request
+def require_auth():
+    token = request.headers.get('Authorization')
+    if token != f"Bearer {API_TOKEN}":
+        return jsonify({"error": "Unauthorized"}), 401
 
 @app.route('/api/logs', methods=['GET'])
 def get_logs():
@@ -17,3 +24,4 @@ def get_logs():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
+
