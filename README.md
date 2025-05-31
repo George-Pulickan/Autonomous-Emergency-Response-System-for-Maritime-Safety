@@ -72,7 +72,7 @@ Clone from GitHub:
 git clone https://github.com/your-username/AutonomousMaritimeDistressSystem.git
 cd AutonomousMaritimeDistressSystem
 ```
-### Install Python Dependencies
+### 2. Install Python Dependencies
 
 pip install flask paho-mqtt twilio
 
