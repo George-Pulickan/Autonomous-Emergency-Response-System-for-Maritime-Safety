@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import sqlite3
 
 app = Flask(__name__)
-API_TOKEN = "secret123"  # replace with a secure token in production
+API_TOKEN = ""  # replace with token
 
 @app.before_request
 def require_auth():
