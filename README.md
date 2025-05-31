@@ -4,6 +4,8 @@ This project is a full-stack autonomous distress alert system designed for marit
 
 Developed using both **C++** and **Python**, the system integrates simulated GPS, sensor fusion, diagnostics, cloud telemetry, and database management.
 
+If interested in blueprints of plans and parts used, please email me at pulickan06@gmail.com, for more information.
+
 ---
 
 ## 🧠 Features
