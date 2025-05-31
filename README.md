@@ -23,40 +23,25 @@ Developed using both **C++** and **Python**, the system integrates simulated GPS
 
 ## 🗂 Project Structure
 
-AutonomousMaritimeDistressSystem/
+- ├── src/                            # C++ modules
+- ├── python/
+- │   ├── water_sensor.py
+- │   ├── mqtt_telemetry.py
+- │   ├── sqlite_logger.py
+- │   ├── rest_api.py                 # now includes token auth
+- │   ├── email_alerts.py             # NEW
+- │   ├── sms_alerts.py               # NEW
+- │   └── system_coordinator.py
+- ├── dashboard-react/                # React frontend
+- │   └── src/App.js
+- ├── Dockerfile
+- ├── Makefile
+- ├── requirements.txt
+- ├── setup.py
+- ├── README.md
+- ├── docs/
+- │   ├── DEPLOYMENT_GUIDE.md
+- │   └── CHECKLIST.md
+- └── .github/workflows/ci.yml
 
-├── src/
-│ 
-│   ├── gps_tracker.cpp
-│ 
-│   ├── vhf_radio_sim.cpp
-│ 
-│   ├── diagnostics.cpp
-│ 
-│   └── environment_sensor.cpp
-│ 
-├── python/
-│ 
-│   ├── water_sensor.py
-│ 
-│   ├── mqtt_telemetry.py
-│ 
-│   ├── sqlite_logger.py
-│ 
-│   ├── rest_api.py
-│ 
-│   ├── interface_gui.py
-│ 
-│   └── system_coordinator.py
-│ 
-├── docs/
-│   ├── DEPLOYMENT_GUIDE.md
-│ 
-│   └── CHECKLIST.md
-│ 
-├── Makefile
-│ 
-├── Dockerfile
-│ 
-├── README.md
 
