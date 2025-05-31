@@ -23,3 +23,23 @@ Developed using both **C++** and **Python**, the system integrates simulated GPS
 
 ## 🗂 Project Structure
 
+AutonomousMaritimeDistressSystem/
+├── src/
+│   ├── gps_tracker.cpp
+│   ├── vhf_radio_sim.cpp
+│   ├── diagnostics.cpp
+│   └── environment_sensor.cpp
+├── python/
+│   ├── water_sensor.py
+│   ├── mqtt_telemetry.py
+│   ├── sqlite_logger.py
+│   ├── rest_api.py
+│   ├── interface_gui.py
+│   └── system_coordinator.py
+├── docs/
+│   ├── DEPLOYMENT_GUIDE.md
+│   └── CHECKLIST.md
+├── Makefile
+├── Dockerfile
+├── README.md
+
