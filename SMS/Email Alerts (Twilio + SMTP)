@@ -1,0 +1,15 @@
+import smtplib
+from email.mime.text import MIMEText
+
+def send_email_alert(subject, body):
+    msg = MIMEText(body)
+    msg['Subject'] = subject
+    msg['From'] = 'your@gmail.com'
+    msg['To'] = 'receiver@example.com'
+
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+        smtp.login('your@gmail.com', 'your-app-password')
+        smtp.send_message(msg)
+
+# Usage:
+# send_email_alert("Water Alert", "Water level exceeded threshold")
