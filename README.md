@@ -102,8 +102,6 @@ http://localhost:5000/api/logs
 If using token auth:
 
 makefile
-Copy
-Edit
 Authorization: Bearer secret123
 
 
