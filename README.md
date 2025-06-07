@@ -95,17 +95,7 @@ This starts:
 - Manual GUI interface
 
 
-### 5.🌐 Accessing REST API
-Visit:
-http://localhost:5000/api/logs
-
-If using token auth:
-
-makefile
-Authorization: Bearer secret123
-
-
-### 6.📡 MQTT Telemetry
+### 5.📡 MQTT Telemetry
 Broker: test.mosquitto.org
 
 Topic: maritime/distress
@@ -113,7 +103,7 @@ Topic: maritime/distress
 Format: JSON telemetry every 5s
 
 
-### 7.📬 Email & SMS Alerts
+### 6.📬 Email & SMS Alerts
 Configure your credentials in email_alerts.py and sms_alerts.py
 
 Run them manually or integrate into system_coordinator.py
