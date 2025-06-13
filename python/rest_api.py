@@ -1,13 +1,24 @@
 from flask import Flask, request, jsonify
 import sqlite3
+import secrets
 
 app = Flask(__name__)
-API_TOKEN = ""  # replace with token
+# IMPORTANT: In a production environment, this token should be read from an environment variable or a secure secrets management system, not hardcoded.
+API_TOKEN = secrets.token_urlsafe(32)
 
 @app.before_request
 def require_auth():
-    token = request.headers.get('Authorization')
-    if token != f"Bearer {API_TOKEN}":
+    auth_header = request.headers.get('Authorization')
+    if not auth_header:
+        return jsonify({"error": "Authorization header is missing"}), 401
+
+    parts = auth_header.split()
+
+    if parts[0].lower() != 'bearer' or len(parts) == 1 or len(parts) > 2:
+        return jsonify({"error": "Invalid token format"}), 401
+
+    token = parts[1]
+    if token != API_TOKEN:
         return jsonify({"error": "Unauthorized"}), 401
 
 @app.route('/api/logs', methods=['GET'])
